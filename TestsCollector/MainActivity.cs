@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace TestsCollector
 {
-    [Activity(Label = "TestsCollector", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "TestsCollector", MainLauncher = false, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -12,7 +12,7 @@ namespace TestsCollector
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Main);
         }
     }
 }
