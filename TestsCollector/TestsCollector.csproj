@@ -61,7 +61,9 @@
     <Compile Include="Data.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Pattern.cs" />
+    <Compile Include="Models\Photo.cs" />
     <Compile Include="PatternTable.cs" />
+    <Compile Include="PatternTableAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,26 +1,44 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
+using TestsCollector.Models;
 
 namespace TestsCollector
 {
     public static class Data<T>
     {
-        public static IEnumerable<T> GetResult(string url)
-        {
-            Task<IEnumerable<T>> x = Task.Run(async () =>
-            {
-                IEnumerable<T> result = await Request(url);
-                return result;
-            });
+        static HttpClient client = new HttpClient();      
 
-            return x.Result;
+        public static IEnumerable<T> ProcessRequest(string url, string verb, T obj)
+        {
+            if (verb == "GET")
+            {
+                Task<IEnumerable<T>> x = Task.Run(async () =>
+                {
+                    IEnumerable<T> result = await Get(url);
+                    return result;
+                });
+
+                return x.Result;
+            }
+
+            if (verb == "POST")
+            {
+                Task.Run(() =>
+                {
+                    Post(url, obj);
+                });
+            }
+
+            return null;
         }
 
-        internal static async Task<IEnumerable<T>> Request(string url)
-        {
-            var client = new System.Net.Http.HttpClient();
+        internal static async Task<IEnumerable<T>> Get(string url)
+        {           
             var response = await client.GetAsync(new Uri(string.Format("http://192.168.0.103:90/"+"{0}", url)));
 
             if (response.IsSuccessStatusCode)
@@ -31,6 +49,13 @@ namespace TestsCollector
             }
 
             return null;
+        }
+
+        internal static void Post(string url, T obj)
+        {
+            var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+
+            client.PostAsync(new Uri(string.Format("http://192.168.0.103:90/" + "{0}", url)), content);
         }
     }
 }
