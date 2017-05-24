@@ -12,11 +12,10 @@ using System.Linq;
 
 namespace TestsCollector
 {
-    [Activity(Label = "Patterns", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Patterns", MainLauncher = false, Icon = "@drawable/icon")]
     public class PatternTable : ListActivity
     {
         internal List<Models.Pattern> patterns;
-        int CAMERA_PIC_REQUEST = 1337;
 
         public static class App
         {
@@ -81,18 +80,21 @@ namespace TestsCollector
 
             Bitmap file = BitmapFactory.DecodeFile(App._file.Path);
 
-            using (var stream = new System.IO.MemoryStream())
+            if (file != null)
             {
-                file.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                var bitmapData = stream.ToArray();
-
-                var pattern = new Models.Photo
+                using (var stream = new System.IO.MemoryStream())
                 {
-                    Name = App._file.Name,
-                    Image = bitmapData
-                };
+                    file.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    var bitmapData = stream.ToArray();
 
-                Data<Models.Photo>.ProcessRequest("api/photos", "POST", pattern);
+                    var pattern = new Models.Photo
+                    {
+                        Name = App._file.Name,
+                        Image = bitmapData
+                    };
+
+                    Data<Models.Photo>.ProcessRequest("api/photos", "POST", pattern);
+                }
             }
 
             GC.Collect();

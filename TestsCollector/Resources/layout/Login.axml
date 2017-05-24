@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+    <EditText
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:hint="E-mail"
+        android:gravity="center"
+        android:layout_marginBottom="7.0dp" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/incorrectEmail"
+        android:gravity="center"
+        android:text="E-mail is not valid!" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:hint="Password"
+        android:password="true"
+        android:gravity="center"
+        android:layout_marginBottom="8.0dp" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IncorrectPassword"
+        android:gravity="center"
+        android:text="Incorrect password!" />
+    <Button
+        android:text="Log in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginPageButton" />
+    <TextView
+        android:text="or"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginOrText"
+        android:gravity="center" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="58.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/facebookButton"
+            android:adjustViewBounds="true"
+            android:padding="9dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent" />
+        <ImageButton
+            android:layout_width="58.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:id="@+id/GoogleButton" />
+    </LinearLayout>
+    <TextView
+        android:text="Forgot your password?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/passReset" />
+</LinearLayout>

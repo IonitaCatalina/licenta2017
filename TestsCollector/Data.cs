@@ -11,7 +11,8 @@ namespace TestsCollector
 {
     public static class Data<T>
     {
-        static HttpClient client = new HttpClient();      
+        static HttpClient client = new HttpClient();     
+        static string ServiceUrl = "http://192.168.0.102:90/";
 
         public static IEnumerable<T> ProcessRequest(string url, string verb, T obj)
         {
@@ -39,7 +40,7 @@ namespace TestsCollector
 
         internal static async Task<IEnumerable<T>> Get(string url)
         {           
-            var response = await client.GetAsync(new Uri(string.Format("http://192.168.0.103:90/"+"{0}", url)));
+            var response = await client.GetAsync(new Uri(string.Format(ServiceUrl +"{0}", url)));
 
             if (response.IsSuccessStatusCode)
             {
@@ -55,7 +56,7 @@ namespace TestsCollector
         {
             var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
 
-            client.PostAsync(new Uri(string.Format("http://192.168.0.103:90/" + "{0}", url)), content);
+            client.PostAsync(new Uri(string.Format(ServiceUrl + "{0}", url)), content);
         }
     }
 }
