@@ -2237,6 +2237,12 @@ namespace TestsCollector
 			// aapt resource value: 0x7f070075
 			public const int IncorrectPassword = 2131165301;
 			
+			// aapt resource value: 0x7f0700b1
+			public const int RegisterPageButton = 2131165361;
+			
+			// aapt resource value: 0x7f0700af
+			public const int Student = 2131165359;
+			
 			// aapt resource value: 0x7f070098
 			public const int action0 = 2131165336;
 			
@@ -2366,6 +2372,9 @@ namespace TestsCollector
 			// aapt resource value: 0x7f070072
 			public const int email = 2131165298;
 			
+			// aapt resource value: 0x7f0700aa
+			public const int emailRegister = 2131165354;
+			
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
@@ -2399,6 +2408,9 @@ namespace TestsCollector
 			// aapt resource value: 0x7f07002e
 			public const int fill_vertical = 2131165230;
 			
+			// aapt resource value: 0x7f0700a8
+			public const int firstName = 2131165352;
+			
 			// aapt resource value: 0x7f070038
 			public const int @fixed = 2131165240;
 			
@@ -2423,11 +2435,17 @@ namespace TestsCollector
 			// aapt resource value: 0x7f070073
 			public const int incorrectEmail = 2131165299;
 			
+			// aapt resource value: 0x7f0700a6
+			public const int incorrectEmailText = 2131165350;
+			
 			// aapt resource value: 0x7f0700a3
 			public const int info = 2131165347;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
+			
+			// aapt resource value: 0x7f0700a9
+			public const int lastName = 2131165353;
 			
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
@@ -2555,8 +2573,14 @@ namespace TestsCollector
 			// aapt resource value: 0x7f070046
 			public const int parentPanel = 2131165254;
 			
+			// aapt resource value: 0x7f0700ad
+			public const int passDontMatch = 2131165357;
+			
 			// aapt resource value: 0x7f07007a
 			public const int passReset = 2131165306;
+			
+			// aapt resource value: 0x7f0700a7
+			public const int passResetButton = 2131165351;
 			
 			// aapt resource value: 0x7f070074
 			public const int password = 2131165300;
@@ -2573,8 +2597,20 @@ namespace TestsCollector
 			// aapt resource value: 0x7f070054
 			public const int radio = 2131165268;
 			
+			// aapt resource value: 0x7f0700ae
+			public const int radioGroup = 2131165358;
+			
 			// aapt resource value: 0x7f07007e
 			public const int registerButton = 2131165310;
+			
+			// aapt resource value: 0x7f0700ab
+			public const int registerPassword = 2131165355;
+			
+			// aapt resource value: 0x7f0700ac
+			public const int registerPasswordConfirm = 2131165356;
+			
+			// aapt resource value: 0x7f0700a5
+			public const int resetPassword = 2131165349;
 			
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
@@ -2677,6 +2713,9 @@ namespace TestsCollector
 			
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
+			
+			// aapt resource value: 0x7f0700b0
+			public const int teacher = 2131165360;
 			
 			// aapt resource value: 0x7f0700a2
 			public const int text = 2131165346;

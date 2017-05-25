@@ -59,7 +59,8 @@
             android:adjustViewBounds="true"
             android:padding="9dp"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/fb" />
         <ImageButton
             android:layout_width="58.0dp"
             android:layout_height="wrap_content"
@@ -68,7 +69,8 @@
             android:padding="8dp"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
-            android:id="@+id/GoogleButton" />
+            android:id="@+id/GoogleButton"
+            android:src="@drawable/google" />
     </LinearLayout>
     <TextView
         android:text="Forgot your password?"

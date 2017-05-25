@@ -2,5 +2,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstName"
+        android:hint="first name"
+        android:password="false"
+        android:gravity="center" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastName"
+        android:hint="last name"
+        android:gravity="center" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailRegister"
+        android:hint="e-mail"
+        android:gravity="center" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerPassword"
+        android:hint="password"
+        android:gravity="center"
+        android:password="true"
+        android:layout_marginTop="23.5dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerPasswordConfirm"
+        android:hint="confirm password"
+        android:gravity="center"
+        android:password="true" />
+    <TextView
+        android:text="Passwords don't match!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passDontMatch"
+        android:gravity="center" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <RadioButton
+            android:text="Student"
+            android:layout_width="117.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/Student"
+            android:layout_marginRight="0.0dp" />
+        <RadioButton
+            android:text="Teacher"
+            android:layout_width="117.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/teacher" />
+    </RadioGroup>
+    <Button
+        android:text="Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegisterPageButton" />
 </LinearLayout>
