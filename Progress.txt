@@ -1,0 +1,17 @@
+    PHONE
+Login
+Register
+    -as teacher
+    -as student (not done)
+Password Reset
+Patterns Table (should be done per user)
+Save Pictures in database
+
+Session State
+
+
+   API
+
+patterns controller
+
+images controller

@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsCollector", "TestsCollector\TestsCollector.csproj", "{A07F7EDC-0DE7-4E4D-9C93-722CB540BB85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectorsApi", "..\..\..\Visual Studio 2015\Projects\CollectorApi\CollectorsApi\CollectorsApi.csproj", "{C307A50E-EAD0-46BA-A084-81D61CB69D47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD75E9BB-0D5A-4D8B-8353-EA437123B1BD}"
+	ProjectSection(SolutionItems) = preProject
+		Progress.txt = Progress.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +24,10 @@ Global
 		{A07F7EDC-0DE7-4E4D-9C93-722CB540BB85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07F7EDC-0DE7-4E4D-9C93-722CB540BB85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A07F7EDC-0DE7-4E4D-9C93-722CB540BB85}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C307A50E-EAD0-46BA-A084-81D61CB69D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C307A50E-EAD0-46BA-A084-81D61CB69D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C307A50E-EAD0-46BA-A084-81D61CB69D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C307A50E-EAD0-46BA-A084-81D61CB69D47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
