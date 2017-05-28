@@ -56,6 +56,7 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -105,6 +106,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Pattern.cs" />
     <Compile Include="Models\Photo.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="PassReset.cs" />
     <Compile Include="PatternTable.cs" />
     <Compile Include="PatternTableAdapter.cs" />

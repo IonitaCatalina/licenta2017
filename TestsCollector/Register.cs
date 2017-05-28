@@ -53,9 +53,20 @@ namespace TestsCollector
                     checkedRadioButton != string.Empty
                 )
                 {
-                    if (password.Text.Equals(passwordConfirm.Text))
+                    var user = new Models.User {
+                        Email = email.Text,
+                        Username = string.Format("{0}{1}", firstName.Text.Substring(0, 1), lastName.Text),
+                        Password = password.Text,
+                        ConfirmPassword = passwordConfirm.Text,
+                        FirstName = firstName.Text,
+                        LastName = lastName.Text
+                    };
+
+                if (password.Text.Equals(passwordConfirm.Text))
                     {
-                        //make register call
+                        Data<Models.User>.ProcessRequest("api/users/create", "POST", user);
+
+                        //check respose? 
 
                         StartActivity(typeof(Login));
                     }

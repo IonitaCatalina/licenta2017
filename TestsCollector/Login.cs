@@ -64,11 +64,17 @@ namespace TestsCollector
                     return;
                 }
 
+                var user = new Models.User
+                {
+                    Email = email.Text,
+                    Password = password.Text,
+                };
+
                 if (email.Text != string.Empty)
                 {
                     if (password.Text != string.Empty)
                     {
-                        if (!email.Text.CheckCredentials(password.Text))
+                        if (!user.CheckCredentials())
                         {
                             incorrectPassAlert.Text = "Incorrect e-mail or password!";
                             incorrectPassAlert.Visibility = Android.Views.ViewStates.Visible;

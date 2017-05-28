@@ -15,3 +15,5 @@ Session State
 patterns controller
 
 images controller
+
+users controller - ASP Identity
