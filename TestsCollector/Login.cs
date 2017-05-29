@@ -74,9 +74,16 @@ namespace TestsCollector
                 {
                     if (password.Text != string.Empty)
                     {
-                        if (!user.CheckCredentials())
+                        if (user.CheckCredentials() == "BadRequest")
                         {
                             incorrectPassAlert.Text = "Incorrect e-mail or password!";
+                            incorrectPassAlert.Visibility = Android.Views.ViewStates.Visible;
+                            return;
+                        }
+
+                        if (user.CheckCredentials() == string.Empty)
+                        {
+                            incorrectPassAlert.Text = "User does not exist!";
                             incorrectPassAlert.Visibility = Android.Views.ViewStates.Visible;
                             return;
                         }
