@@ -7,7 +7,7 @@ Password Reset
 Patterns Table (should be done per user)
 Save Pictures in database
 
-Session State
+Session State (done)
 
 
    API

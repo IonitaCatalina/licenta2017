@@ -1,5 +1,6 @@
 ﻿
 using Android.App;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Widget;
@@ -89,6 +90,14 @@ namespace TestsCollector
                         }
 
                         StartActivity(typeof(PatternTable));
+
+                        //create session
+                        Context mContext = Application.Context;
+                        Session session = new Session(mContext);
+
+                        session.saveAccessKey(user.Email);
+
+                        var test = session.getAccessKey();
                     }
                 }
             };
