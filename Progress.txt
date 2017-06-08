@@ -17,3 +17,5 @@ patterns controller
 images controller
 
 users controller - ASP Identity
+
+Histograms for image processing

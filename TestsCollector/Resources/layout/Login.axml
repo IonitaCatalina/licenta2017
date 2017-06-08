@@ -11,7 +11,8 @@
         android:id="@+id/email"
         android:hint="E-mail"
         android:gravity="center"
-        android:layout_marginBottom="7.0dp" />
+        android:layout_marginBottom="7.0dp"
+        android:text="catalina.ionita@centric.eu" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
         android:hint="Password"
         android:password="true"
         android:gravity="center"
-        android:layout_marginBottom="8.0dp" />
+        android:layout_marginBottom="8.0dp"
+        android:text="Password1!" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"

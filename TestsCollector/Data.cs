@@ -12,7 +12,7 @@ namespace TestsCollector
     public static class Data<T>
     {
         static HttpClient client = new HttpClient();     
-        static string ServiceUrl = "http://192.168.0.105:90/";
+        static string ServiceUrl = "http://192.168.0.104:90/";
 
         public static IEnumerable<T> ProcessRequest(string url, string verb, T obj)
         {

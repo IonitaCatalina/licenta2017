@@ -75,19 +75,24 @@ namespace TestsCollector
                 {
                     if (password.Text != string.Empty)
                     {
-                        if (user.CheckCredentials() == "BadRequest")
+                        var response = user.CheckCredentials();
+
+                        if (response == "BadRequest")
                         {
                             incorrectPassAlert.Text = "Incorrect e-mail or password!";
                             incorrectPassAlert.Visibility = Android.Views.ViewStates.Visible;
                             return;
                         }
 
-                        if (user.CheckCredentials() == string.Empty)
+                        if (response == string.Empty)
                         {
                             incorrectPassAlert.Text = "User does not exist!";
                             incorrectPassAlert.Visibility = Android.Views.ViewStates.Visible;
                             return;
                         }
+
+                        //save user guid as session key
+                        user.Id = response;
 
                         StartActivity(typeof(PatternTable));
 
@@ -95,9 +100,9 @@ namespace TestsCollector
                         Context mContext = Application.Context;
                         Session session = new Session(mContext);
 
-                        session.saveAccessKey(user.Email);
+                        session.saveAccessKey(user.Id);
 
-                        var test = session.getAccessKey();
+                        var test = Session.getAccessKey();
                     }
                 }
             };

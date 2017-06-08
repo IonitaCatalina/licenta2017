@@ -26,7 +26,8 @@ namespace TestsCollector
 
         public PatternTable()
         {
-            this.patterns = Data<Models.Pattern>.ProcessRequest("api/patterns", "GET", null).ToList();
+            if(Session.getAccessKey() != string.Empty)
+                this.patterns = Data<Models.Pattern>.ProcessRequest($"api/{Session.getAccessKey()}/patterns", "GET", null).ToList();
         }
 
         public List<Models.Pattern> Patterns { get => patterns; set => patterns = value; }
@@ -87,13 +88,15 @@ namespace TestsCollector
                     file.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     var bitmapData = stream.ToArray();
 
-                    var pattern = new Models.Photo
+                    var photo = new Models.Photo
                     {
                         Name = App._file.Name,
-                        Image = bitmapData
+                        Image = bitmapData,
+                        TeacherId = Session.getAccessKey()
+                        
                     };
 
-                    Data<Models.Photo>.ProcessRequest("api/photos", "POST", pattern);
+                    Data<Models.Photo>.ProcessRequest("api/photos", "POST", photo);
                 }
             }
 

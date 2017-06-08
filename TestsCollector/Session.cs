@@ -1,12 +1,11 @@
 ﻿using Android.Content;
 using Android.Preferences;
-using TestsCollector.Models;
 
 namespace TestsCollector
 {
     public class Session
     {
-        private ISharedPreferences mSharedPrefs;
+        private static ISharedPreferences mSharedPrefs;
         private ISharedPreferencesEditor mPrefsEditor;
         private Context mContext;
 
@@ -25,7 +24,7 @@ namespace TestsCollector
             mPrefsEditor.Commit();
         }
 
-        public string getAccessKey()
+        public static string getAccessKey()
         {
             return mSharedPrefs.GetString(CurrentUserEmail, "");
         }
