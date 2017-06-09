@@ -30,8 +30,6 @@ namespace TestsCollector
                 this.patterns = Data<Models.Pattern>.ProcessRequest($"api/{Session.getAccessKey()}/patterns", "GET", null).ToList();
         }
 
-        public List<Models.Pattern> Patterns { get => patterns; set => patterns = value; }
-
         protected override void OnCreate(Bundle bundle)
         {
             ListView.FastScrollEnabled = true;
@@ -96,7 +94,10 @@ namespace TestsCollector
                         
                     };
 
+                    //preprocess should return true in order to continue, else, take another pic
                     Data<Models.Photo>.ProcessRequest("api/photos", "POST", photo);
+
+                    StartActivity(typeof(StudentTable));
                 }
             }
 

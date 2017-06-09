@@ -16,7 +16,7 @@ namespace TestsCollector.Helpers
             var x = Task.Run(async () =>
             {
                 var result = await client.PostAsync(
-                    new Uri(string.Format("http://192.168.0.104:90/" + "{0}", "api/users/GetUserByEmail")), content);
+                    new Uri(string.Format("http://192.168.0.101:90/" + "{0}", "api/users/GetUserByEmail")), content);
                 return result;
             });
 

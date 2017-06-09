@@ -39,7 +39,6 @@ namespace TestsCollector
             view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = patterns[position].Name;
             view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = patterns[position].Description;
             
-
             return view;
         }
     }

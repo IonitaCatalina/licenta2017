@@ -59,7 +59,8 @@ namespace TestsCollector
                         Password = password.Text,
                         ConfirmPassword = passwordConfirm.Text,
                         FirstName = firstName.Text,
-                        LastName = lastName.Text
+                        LastName = lastName.Text,
+                        RoleName = checkedRadioButton
                     };
 
                 if (password.Text.Equals(passwordConfirm.Text))
