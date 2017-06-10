@@ -29,7 +29,13 @@ namespace TestsCollector
 
         protected override void OnListItemClick(ListView l, View v, int position, long id)
         {
+            PatternTable.Photo.StudentId = users[position].Id;
+            Toast.MakeText(this, users[position].Fullname, ToastLength.Short).Show();
 
+            //preprocess should return true in order to continue, else, take another pic
+            Data<Models.Photo>.ProcessRequest("api/photos", "POST", PatternTable.Photo);
+
+            StartActivity(typeof(PatternTable));
         }
     }
 }

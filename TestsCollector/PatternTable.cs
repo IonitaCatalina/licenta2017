@@ -16,6 +16,7 @@ namespace TestsCollector
     public class PatternTable : ListActivity
     {
         internal List<Models.Pattern> patterns;
+        public static Models.Photo Photo { get; set; }
 
         public static class App
         {
@@ -45,6 +46,7 @@ namespace TestsCollector
             var t = patterns[position].Name;
             Toast.MakeText(this, t, ToastLength.Short).Show();
 
+            Photo = new Models.Photo { PatternId = patterns[position].Id };
             CreateDirectoryForPictures();
             TakeAPicture();
         }
@@ -83,20 +85,17 @@ namespace TestsCollector
             {
                 using (var stream = new System.IO.MemoryStream())
                 {
-                    file.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    var bitmapScaled = Bitmap.CreateScaledBitmap(file, file.Width/10, file.Height/10, true);
+                    bitmapScaled.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     var bitmapData = stream.ToArray();
 
-                    var photo = new Models.Photo
-                    {
-                        Name = App._file.Name,
-                        Image = bitmapData,
-                        TeacherId = Session.getAccessKey()
-                        
-                    };
+                    file.Recycle();
 
-                    //preprocess should return true in order to continue, else, take another pic
-                    Data<Models.Photo>.ProcessRequest("api/photos", "POST", photo);
-
+                    //add photo properties
+                    Photo.Name = App._file.Name;
+                    Photo.Image = bitmapData;
+                    Photo.TeacherId = Session.getAccessKey();                       
+                   
                     StartActivity(typeof(StudentTable));
                 }
             }

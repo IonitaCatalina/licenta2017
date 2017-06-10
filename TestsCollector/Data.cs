@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -52,11 +54,13 @@ namespace TestsCollector
             return null;
         }
 
-        internal static void Post(string url, T obj)
+        internal async static void Post(string url, T obj)
         {
+            var x = JsonConvert.SerializeObject(obj);
+            Debug.WriteLine(x);
             var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
 
-            client.PostAsync(new Uri(string.Format(ServiceUrl + "{0}", url)), content);
+            await client.PostAsync(new Uri(string.Format(ServiceUrl + "{0}", url)), content);
         }
     }
 }
