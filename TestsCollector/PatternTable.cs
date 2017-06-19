@@ -46,7 +46,11 @@ namespace TestsCollector
             var t = patterns[position].Name;
             Toast.MakeText(this, t, ToastLength.Short).Show();
 
-            Photo = new Models.Photo { PatternId = patterns[position].Id };
+            Photo = new Models.Photo {
+                PatternId = patterns[position].Id,
+                Description = patterns[position].Name + " Test Sample"
+             };
+
             CreateDirectoryForPictures();
             TakeAPicture();
         }
@@ -85,7 +89,7 @@ namespace TestsCollector
             {
                 using (var stream = new System.IO.MemoryStream())
                 {
-                    var bitmapScaled = Bitmap.CreateScaledBitmap(file, file.Width/10, file.Height/10, true);
+                    var bitmapScaled = Bitmap.CreateScaledBitmap(file, file.Width, file.Height, true);
                     bitmapScaled.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     var bitmapData = stream.ToArray();
 
@@ -94,7 +98,7 @@ namespace TestsCollector
                     //add photo properties
                     Photo.Name = App._file.Name;
                     Photo.Image = bitmapData;
-                    Photo.TeacherId = Session.getAccessKey();                       
+                    Photo.TeacherId = Session.getAccessKey();  
                    
                     StartActivity(typeof(StudentTable));
                 }
